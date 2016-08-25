@@ -1,15 +1,15 @@
 ## Libraries and data
 
 library(dplyr)
-library(...)
-surveys <- read.csv(..., na.strings = "") %>%
+library(ggplot2)
+surveys <- read.csv("data/surveys.csv", na.strings = "") %>%
   filter(!is.na(species_id), !is.na(sex), !is.na(weight))
 
 ## Constructing layered graphics in ggplot
 
-ggplot(...,
-       ...) +
-  ...
+ggplot(data = surveys,
+       aes(x = species_id, y = weight)) +
+  geom_point()
 
 ggplot(data = surveys,
        aes(x = species_id, y = weight)) +
